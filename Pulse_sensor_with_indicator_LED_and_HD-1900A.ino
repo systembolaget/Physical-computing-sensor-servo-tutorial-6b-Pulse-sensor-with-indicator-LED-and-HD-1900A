@@ -28,9 +28,9 @@ const byte pinSwitch = 8; // Digital pin from momentary switch
 byte lastSwitchState = HIGH; // Tracks the last switch state, open (= HIGH) at start
 byte indicatorState = false; // Tracks if the LED and servo are on or off, off (= false) at start
 byte servoAngle = 90; // Default angle of the servo at start-up
-int sensorSignalMin = 1023; //
-int sensorSignalMax = 0; //
-int sensorSignal; // Value fetched from the pulse sensor; can range from 0 to 1023
+int sensorSignalMin = 1023; // Will become the next person's minimum pulse value
+int sensorSignalMax = 0; // Will become the next person's maximum pulse value
+int sensorSignal = 0; // Value fetched from the pulse sensor; can range from 0 to 1023
 int signalThreshold = 0; // Threshold which value counts as a real pulse, varies with each person
 
 void setup()
@@ -87,13 +87,6 @@ void loop()
 
   // Then calculate the running median to smooth the data
   int signalMedian = samples.getMedian();
-
-  // Map the smoothed data to the minimum and maximum servo angle range,
-  // in my case 10° to 170°. The value range 400 to 700 is what I saw
-  // in the serial monitor with one of my fingers. This range can change
-  // with other fingers, the pressure applied to the sensor, and was
-  // different on fingers of my children
-  // Servo capable of 120° rotation max.
 
   // Map the smoothed values to the max. servo angle range the servo is
   // capable of, depending on the minimum and maximum values recorded for
