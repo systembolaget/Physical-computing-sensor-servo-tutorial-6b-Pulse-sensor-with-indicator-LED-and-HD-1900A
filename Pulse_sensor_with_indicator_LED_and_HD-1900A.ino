@@ -95,15 +95,13 @@ void loop()
   // different on fingers of my children
   // Servo capable of 120° rotation max.
 
-
-
-  servoAngle = map(signalMedian, 200, 1000, 30, 150);
-  //servoAngle = map(signalMedian, sensorSignalMin, sensorSignalMax, 20, 160);
-
-
+  // Map the smoothed values to the max. servo angle range the servo is
+  // capable of, depending on the minimum and maximum values recorded for
+  // the next person after resetting the program
+  servoAngle = map(signalMedian, sensorSignalMin, sensorSignalMax, 20, 160);
   
-  // Make sure outlier values are within the desired angle range
-  servoAngle = constrain(servoAngle, 30, 150);
+  // Make sure outlier values are within the possible angle range
+  servoAngle = constrain(servoAngle, 20, 160);
 
   // Print various values to the serial monitor/plotter for the next person
   // wearing the sensor
