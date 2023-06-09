@@ -106,6 +106,7 @@ void loop()
   {
     // Flash the LED
     flashLED();
+    
     // Rotate the servo
     rotateServo();
   }
