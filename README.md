@@ -1,6 +1,6 @@
 # Physical computing sensor servo tutorial - Pulse sensor with indicator LED and HD-1900A
 
-Coming soon...
+Display someone's heartbeat visually and mechanically
 
 ### Setup
 
