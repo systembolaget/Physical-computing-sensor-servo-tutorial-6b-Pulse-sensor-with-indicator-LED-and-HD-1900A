@@ -6,7 +6,7 @@ Display someone's heartbeat visually and mechanically
 
 You can click the image to play the associated YouTube video
 
-[![Alt text](Assets/6b%20result.jpg)](https://www.youtube.com/)
+[![Alt text](Assets/6b%20result.jpg)](https://youtu.be/d-jUeutpcNI/)
 
 ### Schematic
 
